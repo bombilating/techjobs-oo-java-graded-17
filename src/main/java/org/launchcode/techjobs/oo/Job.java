@@ -2,6 +2,7 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
+
 public class Job {
 
     private int id;
@@ -92,5 +93,16 @@ public class Job {
 
     public int getId() {
         return id;
+    }
+
+    @Override
+    public String toString() {
+        String jobString = "\nID: " + id;
+        jobString = jobString.concat(name.isEmpty() ? "\nName: " + "Data not available":"\nName: " + name);
+        jobString = jobString.concat(employer.getValue().isEmpty()? "\nEmployer: " + "Data not available":"\nEmployer: " + employer.getValue());
+        jobString = jobString.concat(location.getValue().isEmpty()? "\nLocation: " + "Data not available":"\nLocation: " + location.getValue());
+        jobString = jobString.concat(positionType.getValue().isEmpty()? "\nPosition Type: " + "Data not available":"\nPosition Type: " + positionType.getValue());
+        jobString = jobString.concat(coreCompetency.getValue().isEmpty()? "\nCore Competency: " + "Data not available" + "\n":"\nCore Competency: " + coreCompetency.getValue() + "\n");
+        return jobString;
     }
 }
